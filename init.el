@@ -1,6 +1,5 @@
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/vendor/")
-;;(add-to-list 'load-path "~/.emacs.d/vendor/rdebug")
 
 (setq inhibit-splash-screen t) ;; no splash screen
 (tool-bar-mode -1)  ;; no toolbar
@@ -65,16 +64,3 @@
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
-(custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(newsticker-url-list (quote (("Codding Horror" "http://feeds2.feedburner.com/codinghorror" nil nil nil))))
- '(newsticker-url-list-defaults (quote (("CNET News.com" "http://export.cnet.com/export/feeds/news/rss/1,11176,,00.xml") ("Emacs Wiki" "http://www.emacswiki.org/cgi-bin/wiki.pl?action=rss" nil 3600)))))
-(custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- )

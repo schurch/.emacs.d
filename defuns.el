@@ -153,8 +153,8 @@
   (interactive)
   (message (if (y-or-n-p "Do you have a test for that? ") "Good." "Bad!")))
 
-(defun prettyprint-xml ()
-  "Pretty format XML markup in region. You need to have nxml-mode
+(defun format-xml ()
+  "You need to have nxml-mode
 http://www.emacswiki.org/cgi-bin/wiki/NxmlMode installed to do
 this.  The function inserts linebreaks to separate tags that have
 nothing but whitespace between them.  It then indents the markup
@@ -165,6 +165,7 @@ by using nxml's indentation rules."
       (goto-char (point-min))
       (while (search-forward-regexp "\>[ \\t]*\<" nil t) 
         (backward-char) (insert "\n"))
-      (indent-region (point-min) (point-max))))
+      (indent-region (point-min) (point-max))
+      (delete-trailing-whitespace)))
 
 (provide 'defuns)

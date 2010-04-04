@@ -15,9 +15,14 @@
 (require 'ido)
 (ido-mode t)
 
+;; Load nxml-mode for files ending in .xml, .xsl, .rng, .xhtml
+(setq auto-mode-alist
+      (cons '("\\.\\(xml\\|xsl\\|rng\\|xhtml\\)\\'" . nxml-mode) 
+	    auto-mode-alist))
+
 ;; Load custom stuff
-(require 'key-bindings)
 (require 'defuns)
+(require 'key-bindings)
 (require 'etags-update)
 
 ;;; This was installed by package-install.el.

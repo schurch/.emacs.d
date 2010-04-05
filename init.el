@@ -23,7 +23,6 @@
 ;; Load custom stuff
 (require 'defuns)
 (require 'key-bindings)
-(require 'etags-update)
 
 ;;; This was installed by package-install.el.
 ;;; This provides support for the package system and
@@ -38,14 +37,6 @@
 (transient-mark-mode t) ;; regoin mark
 (setq visible-bell t) ;; turn off annoying beep
 (fset 'yes-or-no-p 'y-or-n-p) ;; y/n instead of yes/no
-
-;; Toggle full screen mode
-(defun toggle-fullscreen ()
-  (interactive)
-  (set-frame-parameter nil 'fullscreen (if (frame-parameter nil 'fullscreen)
-                                           nil
-                                         'fullboth)))
-(global-set-key (kbd "M-n") 'toggle-fullscreen)
 
 ;; Save a list of recent files visited.
 (recentf-mode 1)

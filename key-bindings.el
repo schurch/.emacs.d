@@ -55,17 +55,8 @@
 ;; Should be able to eval-and-replace anywhere.
 (global-set-key (kbd "C-c e") 'eval-and-replace)
 
-;; Applications
-
-(global-set-key (kbd "C-c j") (lambda () (interactive) (switch-or-start 'jabber-connect "*-jabber-*")))
-(global-set-key (kbd "C-c g") (lambda () (interactive) (switch-or-start 'gnus "*Group*")))
-(global-set-key (kbd "C-c i") (lambda () (interactive) (switch-or-start (lambda ()
-                                                                          (rcirc-connect "irc.freenode.net"))
-                                                                   "*irc.freenode.net*")))
-(global-set-key (kbd "C-c J") 'jabber-send-presence)
-(global-set-key (kbd "C-c M-j") 'jabber-disconnect)
+;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
-
 
 ;; This is a little hacky since VC doesn't support git add internally
 (eval-after-load 'vc
@@ -80,5 +71,10 @@
   (lambda () (interactive)
     (let ((case-fold-search isearch-case-fold-search))
       (occur (if isearch-regexp isearch-string (regexp-quote isearch-string))))))
+
+;; Format xml
+(add-hook 'nxml-mode-hook
+ (lambda ()
+   (define-key nxml-mode-map (kbd "C-c f") 'format-xml)))
 
 (provide 'key-bindings)

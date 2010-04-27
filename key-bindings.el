@@ -4,9 +4,6 @@
 ;; Align your code in a pretty way.
 (global-set-key (kbd "C-x \\") 'align-regexp)
 
-;; Completion that uses many different methods to find options.
-(global-set-key (kbd "M-=") 'dabbrev-expand)
-
 ;; Perform general cleanup.
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
 
@@ -74,7 +71,7 @@
 
 ;; Format xml
 (add-hook 'nxml-mode-hook
- (lambda ()
-   (define-key nxml-mode-map (kbd "C-c f") 'format-xml)))
+          (lambda ()
+            (define-key nxml-mode-map (kbd "C-c f") 'format-xml)))
 
 (provide 'key-bindings)

@@ -1,5 +1,6 @@
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/vendor/")
+(add-to-list 'load-path "~/.emacs.d/vendor/themes/")
 
 (setq inhibit-splash-screen t) ;; no splash screen
 (tool-bar-mode -1)  ;; no toolbar
@@ -8,8 +9,9 @@
 
 ;; Setup color themes
 (require 'color-theme)
+(require 'color-theme-wombat)
 (color-theme-initialize)
-(color-theme-twilight)
+(color-theme-wombat)
 
 ;; interactive do things
 (require 'ido)
@@ -60,3 +62,17 @@
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
+(setq org-log-done 'time)
+
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(org-agenda-files (quote ("~/TODO.org"))))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
